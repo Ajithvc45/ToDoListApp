@@ -6,7 +6,7 @@ function ajax(){
             var response = JSON.parse(this.responseText);
             var output = "";
             for(var i=0;i<response.length;i++){
-                output += `<input type="checkbox"><br>`+response[i].title;
+                output += `<br><input type="checkbox">`+response[i].title;
                 
             }
             document.getElementById("demo").innerHTML=output;
@@ -20,3 +20,16 @@ function ajax(){
 
 //promise
 
+// let p = new Promise((resolve,reject) =>{
+//     if(output.value>=5){
+//         resolve("success");
+//     }else{
+//         reject("failed");
+//     }
+// })
+
+// p.then((message)=>{
+//     console.log("This is " + message);
+// }).catch((message)=>{
+//     console.log("this is " + messagez);
+// })
