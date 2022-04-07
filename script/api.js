@@ -6,7 +6,8 @@ function ajax(){
             var response = JSON.parse(this.responseText);
             var output = "";
             for(var i=0;i<response.length;i++){
-                output += "<li>"+response[i].title;
+                output += `<input type="checkbox"><br>`+response[i].title;
+                
             }
             document.getElementById("demo").innerHTML=output;
         }
@@ -15,3 +16,7 @@ function ajax(){
     xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
     xhttp.send();
 }
+
+
+//promise
+
