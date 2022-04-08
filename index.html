@@ -9,15 +9,23 @@
 </head>
 <body>
     <div class="col-lg-12">
-        <div class="nav">
-            <h3 id="todohead" onclick="ajax();">Todo List</h3>
-            <h3 id="logout"><a href="login.html">LogOut</a></h3>
+     <div class="bg">
+        <img src="./Img/loginblue.jpg" alt="">
+        <div class="user">
+            <img src="./Img/user.png" alt="">
+            <h3>User LogIn</h3>
         </div>
-        <div id="demo">
-            
+        <div class="fdetails">
+            <form id="form" onsubmit="return check(redirect);">
+                <input type="text" id="username" placeholder="Username" size="25" style="position: relative;">
+                <input type="password" id="password" placeholder="Password" size="25">
+                <p id="ldetails">Username “admin” and Password “12345”</p>
+                <input type="submit" value="LogIn" id="submit"><br><br>
+                <label for="error" id="error"></label>
+            </form>
         </div>
+     </div>
     </div>
-
-    <script src="./script/api.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
