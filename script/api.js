@@ -6,7 +6,7 @@ function ajax(){
             var response = JSON.parse(this.responseText);
             var output = "";
             for(var i=0;i<response.length;i++){
-                output += `<br><input type="checkbox">`+response[i].title;
+                output += `<br><input type="checkbox" onclick="validation();" id="call">`+response[i].title;
                 
             }
             document.getElementById("demo").innerHTML=output;
@@ -20,8 +20,9 @@ function ajax(){
 
 //promise
 
+
 // let p = new Promise((resolve,reject) =>{
-//     if(output.value>=5){
+//     if(alert.checked){
 //         resolve("success");
 //     }else{
 //         reject("failed");
@@ -31,5 +32,42 @@ function ajax(){
 // p.then((message)=>{
 //     console.log("This is " + message);
 // }).catch((message)=>{
-//     console.log("this is " + messagez);
+//     console.log("this is " + message);
 // })
+
+
+//check2
+
+// function validation(){
+//     if(document.getElementById("call").checked){
+//         var x61 = document.getElementById("call").value;
+//     }else{
+//         var x61 = "";
+//     }
+//     alert("Helloooo")
+// }
+
+var count = 0;
+function validation(){
+    var box = document.getElementById("call");
+    if(box.checked){
+        count = count + 1;
+        var promise = new Promise((resolve,reject)=> {
+            if(count==5){
+                resolve("You have successfully completed 5 tasks");
+                count = 0;
+            }else{
+                reject("Not completed 5 tasks");
+            }
+        })
+        promise
+        .then(function(s){
+            alert(s)
+        })
+        .catch(function(e){
+            console.log(e);
+        })
+    }else{
+        console.log("error occured");
+    }
+}
