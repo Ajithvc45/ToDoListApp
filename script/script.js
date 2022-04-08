@@ -27,6 +27,6 @@ var check = (callback)=>{
 }
 
 function redirect(){
-    document.getElementById("form").action="index.html";
+    document.getElementById("form").action="main.html";
 }
 
